@@ -29,17 +29,10 @@ header {
         float: right;
         @include justifyFlex;
     }
-
-    //#options {
-        //@include justifyFlex;
-        //animation: menuSlide 500ms 1;
-        //animation-direction: reverse;
-    //}
     .link {
         height: 40px;
         width: auto;
         float: left;
-        //@include justifyFlex;
     }
     a {
         color: rgb(240, 240, 240);
