@@ -1,0 +1,221 @@
+body {
+  margin: 0%;
+}
+
+header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 60px;
+  padding: 10px;
+  margin: 0px;
+  background-color: royalblue;
+  color: white;
+}
+
+header .logo {
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+header .logo img {
+  height: 40px;
+  width: 40px;
+}
+
+header #menu {
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .link {
+  height: 40px;
+  width: auto;
+  float: left;
+}
+
+header a {
+  color: #f0f0f0;
+  font-size: 125%;
+  line-height: 40px;
+  margin: 0px 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .ab1 {
+  position: absolute;
+  top: 12px;
+  -webkit-animation: cross1 500ms 1;
+          animation: cross1 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+header .ab2 {
+  position: absolute;
+  top: 23px;
+  -webkit-animation: cross2 500ms 1;
+          animation: cross2 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+header .ab11 {
+  position: absolute;
+  top: 12px;
+  -webkit-animation: cross1 500ms 1;
+          animation: cross1 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+header .ab21 {
+  position: absolute;
+  top: 23px;
+  -webkit-animation: cross2 500ms 1;
+          animation: cross2 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+header .ab3 {
+  position: absolute;
+  top: 35px;
+}
+
+header .dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  background-color: dodgerblue;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid darkblue;
+  border-right: 0px;
+  top: 60px;
+  right: -210px;
+  width: 200px;
+  -webkit-animation: menuSlide 500ms 1;
+          animation: menuSlide 500ms 1;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+header .dropdown :hover {
+  background-color: #50a4f8;
+}
+
+@-webkit-keyframes cross1 {
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 19px;
+  }
+}
+
+@keyframes cross1 {
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 19px;
+  }
+}
+
+@-webkit-keyframes cross2 {
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 19px;
+  }
+}
+
+@keyframes cross2 {
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 19px;
+  }
+}
+
+@-webkit-keyframes menuSlide {
+  0% {
+    right: -210px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes menuSlide {
+  0% {
+    right: -210px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #menu {
+    background-color: lightblue;
+    height: 40px;
+    width: 40px;
+  }
+  #icon {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    background-color: lightblue;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    float: right;
+    padding: 3px 0px;
+  }
+  .bar {
+    height: 4px;
+    width: 33px;
+    margin: 3.5px;
+    background-color: black;
+    border-radius: 4px;
+  }
+  /*
+    .menu:hover {
+        .options {
+            display: block;
+            position: absolute;
+            background-color: lightblue;
+            top: 58px;
+            right: 18px;
+        }
+        .icon {
+            padding: 0%;
+        }
+    }*/
+}
+/*# sourceMappingURL=style.css.map */

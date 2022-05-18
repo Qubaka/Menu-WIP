@@ -1,0 +1,111 @@
+body{
+    margin: 0%;
+}
+
+$mainColor :royalblue;
+@mixin justifyFlex{
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    box-sizing: border-box;
+    height: 60px;
+    padding: 10px;
+    margin: 0px;
+    background-color: $mainColor ;
+    color: white;
+    .logo {
+        height: 40px;
+        width: 40px;
+        float: left;
+    
+        img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    #menu {
+        float: right;
+        @include justifyFlex;
+    }
+
+    //#options {
+        //@include justifyFlex;
+        //animation: menuSlide 500ms 1;
+        //animation-direction: reverse;
+    //}
+    .link {
+        height: 40px;
+        width: auto;
+        float: left;
+        //@include justifyFlex;
+    }
+    a {
+        color: rgb(240, 240, 240);
+        font-size: 125%;
+        line-height: 40px;
+        margin: 0px 20px;
+    }
+}
+.hidden{
+
+    display:flex;
+    @media only screen and (max-width: 800px) {
+        display: none;
+    }
+}
+
+//animation classes
+header{
+    .ab1{
+        position: absolute;
+        top: 12px;
+        animation: cross1 500ms 1;
+        animation-fill-mode: forwards;
+    }
+    .ab2{
+        position: absolute;
+        top: 23px;
+        animation: cross2 500ms 1;
+        animation-fill-mode: forwards;
+    }
+    .ab11{
+        position: absolute;
+        top: 12px;
+        animation: cross1 500ms 1;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
+    }
+    .ab21{
+        position: absolute;
+        top: 23px;
+        animation: cross2 500ms 1;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
+    }
+    .ab3{
+        position: absolute;
+        top: 35px;
+    }
+    .dropdown{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background-color: dodgerblue;
+        box-sizing: border-box;
+        border: 2px solid darkblue;
+        border-right: 0px;
+        top: 60px;
+        right: -210px;
+        width: 200px;
+        animation: menuSlide 500ms 1;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+        :hover{
+            background-color: rgb(80, 164, 248);
+        }
+    }
+}
+
+@import "./mobile";
