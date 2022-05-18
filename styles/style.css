@@ -1,5 +1,5 @@
 body {
-  margin: 0%;
+  margin: 0;
 }
 
 header {
@@ -10,6 +10,12 @@ header {
   margin: 0px;
   background-color: royalblue;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header .logo {
@@ -19,12 +25,11 @@ header .logo {
 }
 
 header .logo img {
-  height: 40px;
-  width: 40px;
+  height: auto;
+  width: 100%;
 }
 
-header #menu {
-  float: right;
+header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,9 +39,16 @@ header #menu {
 }
 
 header .link {
-  height: 40px;
-  width: auto;
-  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+header .link a {
+  text-decoration: none;
+  text-decoration: none;
+  display: block;
+  height: auto;
+  margin: auto;
 }
 
 header a {
@@ -47,59 +59,19 @@ header a {
 }
 
 .hidden {
-  display: none;
-}
-
-.flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .ab1 {
-  position: absolute;
-  top: 12px;
-  -webkit-animation: cross1 500ms 1;
-          animation: cross1 500ms 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+@media only screen and (max-width: 800px) {
+  .hidden {
+    display: none;
+  }
 }
 
-header .ab2 {
-  position: absolute;
-  top: 23px;
-  -webkit-animation: cross2 500ms 1;
-          animation: cross2 500ms 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-header .ab11 {
-  position: absolute;
-  top: 12px;
-  -webkit-animation: cross1 500ms 1;
-          animation: cross1 500ms 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  animation-direction: reverse;
-}
-
-header .ab21 {
-  position: absolute;
-  top: 23px;
-  -webkit-animation: cross2 500ms 1;
-          animation: cross2 500ms 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  animation-direction: reverse;
-}
-
-header .ab3 {
-  position: absolute;
-  top: 35px;
-}
-
-header .dropdown {
+header > div#menu-icon {
+  background-color: rgba(255, 255, 255, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,25 +79,71 @@ header .dropdown {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: fixed;
-  background-color: dodgerblue;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 2px solid darkblue;
-  border-right: 0px;
-  top: 60px;
-  right: -210px;
-  width: 200px;
-  -webkit-animation: menuSlide 500ms 1;
-          animation: menuSlide 500ms 1;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5em 0.3em;
+}
+
+@media only screen and (min-width: 800px) {
+  header > div#menu-icon {
+    display: none;
+  }
+}
+
+header > div#menu-icon .ab1 {
+  position: absolute;
+  top: 12px;
+  -webkit-animation: cross1 500ms 1;
+          animation: cross1 500ms 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-header .dropdown :hover {
-  background-color: #50a4f8;
+header > div#menu-icon .ab2 {
+  position: absolute;
+  top: 23px;
+  -webkit-animation: cross2 500ms 1;
+          animation: cross2 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+header > div#menu-icon .ab3 {
+  position: absolute;
+  top: 34px;
+}
+
+@media only screen and (max-width: 800px) {
+  header #dropdown {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    background-color: dodgerblue;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 2px solid darkblue;
+    border-right: 0px;
+    top: 60px;
+    right: -210px;
+    width: 200px;
+    -webkit-animation: menuSlide 500ms 1;
+            animation: menuSlide 500ms 1;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  header #dropdown :hover {
+    background-color: #50a4f8;
+  }
+  header #dropdown:not(.hidden) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 @-webkit-keyframes cross1 {
@@ -179,7 +197,7 @@ header .dropdown :hover {
 }
 
 @media only screen and (max-width: 800px) {
-  #menu {
+  .menu {
     background-color: lightblue;
     height: 40px;
     width: 40px;
@@ -200,22 +218,10 @@ header .dropdown :hover {
   .bar {
     height: 4px;
     width: 33px;
-    margin: 3.5px;
+    margin: 1px;
     background-color: black;
     border-radius: 4px;
+    margin: auto;
   }
-  /*
-    .menu:hover {
-        .options {
-            display: block;
-            position: absolute;
-            background-color: lightblue;
-            top: 58px;
-            right: 18px;
-        }
-        .icon {
-            padding: 0%;
-        }
-    }*/
 }
 /*# sourceMappingURL=style.css.map */
