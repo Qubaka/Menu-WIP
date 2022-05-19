@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  height: 100vh;
+}
+
+.red {
+  background-color: red;
 }
 
 header {
@@ -29,25 +34,18 @@ header .logo img {
   width: 100%;
 }
 
-header .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 header .link {
   width: 100%;
   text-align: center;
+  height: 100%;
 }
 
 header .link a {
+  white-space: nowrap;
   text-decoration: none;
   text-decoration: none;
   display: block;
-  height: auto;
+  height: 100%;
   margin: auto;
 }
 
@@ -59,15 +57,7 @@ header a {
 }
 
 .hidden {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media only screen and (max-width: 800px) {
-  .hidden {
-    display: none;
-  }
+  display: none;
 }
 
 header > div#menu-icon {
@@ -91,27 +81,30 @@ header > div#menu-icon {
   }
 }
 
-header > div#menu-icon .ab1 {
+header > div#menu-icon .borgir1 {
   position: absolute;
-  top: 12px;
+  top: 20px;
   -webkit-animation: cross1 500ms 1;
           animation: cross1 500ms 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-header > div#menu-icon .ab2 {
+header > div#menu-icon .borgir2 {
   position: absolute;
-  top: 23px;
+  top: 28px;
   -webkit-animation: cross2 500ms 1;
           animation: cross2 500ms 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-header > div#menu-icon .ab3 {
-  position: absolute;
-  top: 34px;
+header > div#menu-icon .borgir3 {
+  margin-top: 18px;
+  -webkit-animation: cross3 500ms 1;
+          animation: cross3 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @media only screen and (max-width: 800px) {
@@ -135,6 +128,7 @@ header > div#menu-icon .ab3 {
             animation-timing-function: ease;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+    z-index: 2;
   }
   header #dropdown :hover {
     background-color: #50a4f8;
@@ -146,11 +140,28 @@ header > div#menu-icon .ab3 {
   }
 }
 
+@media only screen and (min-width: 800px) {
+  header #dropdown.hidden {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+  }
+  header #dropdown.hidden .link {
+    margin: 0 25px;
+  }
+}
+
 @-webkit-keyframes cross1 {
   100% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 19px;
+    top: 23px;
   }
 }
 
@@ -158,7 +169,7 @@ header > div#menu-icon .ab3 {
   100% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 19px;
+    top: 23px;
   }
 }
 
@@ -166,7 +177,7 @@ header > div#menu-icon .ab3 {
   100% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    top: 19px;
+    top: 23px;
   }
 }
 
@@ -174,7 +185,19 @@ header > div#menu-icon .ab3 {
   100% {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    top: 19px;
+    top: 23px;
+  }
+}
+
+@-webkit-keyframes cross3 {
+  100% {
+    margin-top: 20px;
+  }
+}
+
+@keyframes cross3 {
+  100% {
+    margin-top: 20px;
   }
 }
 
@@ -196,32 +219,47 @@ header > div#menu-icon .ab3 {
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .menu {
-    background-color: lightblue;
-    height: 40px;
-    width: 40px;
+@-webkit-keyframes blur {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
   }
-  #icon {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    height: 40px;
-    width: 40px;
-    background-color: lightblue;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    float: right;
-    padding: 3px 0px;
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  .bar {
-    height: 4px;
-    width: 33px;
-    margin: 1px;
-    background-color: black;
-    border-radius: 4px;
-    margin: auto;
+}
+
+@keyframes blur {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.bar {
+  height: 4px;
+  width: 33px;
+  margin: 1px;
+  background-color: black;
+  border-radius: 4px;
+  margin: auto;
+}
+
+#blur {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-animation: blur 200ms 1;
+          animation: blur 200ms 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media only screen and (min-width: 800px) {
+  #blur {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

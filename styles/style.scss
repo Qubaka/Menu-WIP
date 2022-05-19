@@ -4,6 +4,10 @@ $mobile-view: 800px;
 
 body {
   margin: 0;
+  height: 100vh;
+}
+.red{
+  background-color: red;
 }
 
 header {
@@ -27,19 +31,16 @@ header {
     }
   }
 
-  .menu {
-    display: flex;
-    justify-content: center;
-  }
-
   .link {
       width: 100%;
       text-align: center;
+      height: 100%;
       a{
+        white-space: nowrap;
         text-decoration: none;
         text-decoration: none;
         display: block;
-        height: auto;
+        height: 100%;
         margin: auto;
       }
   }
@@ -53,11 +54,7 @@ header {
 }
 
 .hidden {
-  display: flex;
-
-  @media only screen and (max-width: $mobile-view) {
-    display: none;
-  }
+  display: none;
 }
 
 header {
@@ -72,23 +69,24 @@ header {
     justify-content: space-between;
     padding: 0.5em 0.3em;
 
-    .ab1 {
+    .borgir1{
       position: absolute;
-      top: 12px;
+      top:20px;
       animation: cross1 500ms 1;
       animation-fill-mode: forwards;
     }
 
-    .ab2 {
+    .borgir2{
       position: absolute;
-      top: 23px;
+      top: 28px;
       animation: cross2 500ms 1;
       animation-fill-mode: forwards;
     }
 
-    .ab3 {
-      position: absolute;
-      top: 34px;
+    .borgir3 {
+      margin-top: 18px;
+      animation: cross3 500ms 1;
+      animation-fill-mode: forwards;
     }
   }
 
@@ -106,6 +104,7 @@ header {
       animation: menuSlide 500ms 1;
       animation-timing-function: ease;
       animation-fill-mode: forwards;
+      z-index: 2;
 
       :hover {
         background-color: rgb(80, 164, 248);
@@ -116,12 +115,18 @@ header {
       }
     }
 
-    // @media only screen and (min-width: $mobile-view) {
-    //   &.hidden {
-
-    //   }
-    // }
+    @media only screen and (min-width: $mobile-view) {
+      &.hidden {
+        display: flex;
+        justify-content: space-between;
+        min-width: max-content;
+        .link{
+          margin: 0 25px
+        }
+      }
+    }
   }
 }
+
 
 @import "./mobile";
